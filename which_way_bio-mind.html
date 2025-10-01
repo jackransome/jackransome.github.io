@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Georgia, serif;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Navigation Bar */
+      nav {
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #5f9b65;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      nav a:hover {
+        color: #4a7a50;
+      }
+
+      /* Main Content */
+      .container {
+        max-width: 800px;
+        margin: 3rem auto 50vh;
+        padding: 3rem;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+        font-family: "Warnock Pro", "Palatino Linotype", "Book Antiqua",
+          Palatino, serif;
+      }
+
+      .subtitle {
+        font-size: 1.25rem;
+        color: #666;
+        font-style: italic;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #eee;
+        font-family: "Warnock Pro", "Palatino Linotype", "Book Antiqua",
+          Palatino, serif;
+      }
+
+      .content {
+        font-size: 1.125rem;
+        color: #333;
+      }
+
+      .content p {
+        margin-bottom: 1.5rem;
+      }
+
+      .content a {
+        color: #5f9b65;
+        text-decoration: none;
+        border-bottom: 1px solid #5f9b65;
+        transition: all 0.2s;
+      }
+
+      .content a:hover {
+        color: #4a7a50;
+        border-bottom-color: #4a7a50;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .container {
+          margin: 1rem;
+          padding: 1.5rem;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <h1>Which Way, Bio-Mind?</h1>
+      <div class="subtitle">
+        learning-choices in a world of evaporating leverage
+      </div>
+
+      <div class="content">
+        <p>
+          Over the past 6 months I've done 120
+          <a href="https://leetcode.com/">leetcode</a> problems, resulting in a
+          steady increase in both my speed and ability to write efficient
+          solutions. As of 1/10/2025,
+          <a href="https://openai.com/index/introducing-o3-and-o4-mini/"
+            >openAIs o4 mini model is ranked in the top ~200 in the world on
+            codeforces</a
+          >. These kinds of tasks don't require much context, don't require
+          large architectural decisions, and rely on recognizing patterns you've
+          seen before and fitting together different predefined algorithmic
+          pieces if you're familiar enough with the types of problems. While you
+          can claim LLMs are suited to this kind of task because they can do
+          millions of these problems and learn the patterns, this type of task
+          is not fundamentally different to the very fine grained level of
+          programming that software developers do have to do on a daily basis.
+          What I mean here is that a software developers work can be broken down
+          into different levels of abstraction, from high level architectural
+          decisions, all the way down to which keys to press on the keyboard.
+          What AI is already near superhuman at is the bottom few layers of
+          that: with a good spec it can write good quality, fast, self contained
+          code to solve pretty difficult problems, provided it has the context
+          needed. This should shift the role of the developer more of a higher
+          level decision making and reviewing role.
+        </p>
+
+        <p>
+          If leetcode is training for those bottom few layers, then the skills
+          gained through it should become obsolete fairly soon, except in
+          situations where because of legal or corporate frictions, the use of
+          AI tools is not permitted. One reason it still makes sense to train on
+          leetcode is that tech companies often use those style of problems as a
+          sort of iq proxy / screening stage, and they do this even when the job
+          of they are interviewing for does not match this kind of task at all.
+          This suggests that AI's performance here won't stop companies from
+          using these interview stages. In this respect, doing leetcode becomes
+          more like grinding practice psychometric tests than building a core
+          skill that will increase your ability to get stuff done.
+        </p>
+
+        <p>
+          The second reason to continue practicing these kinds of problems is
+          that it trains your ability to solve problems more generally. While
+          the data structures, algorithms, and their use cases that you learn
+          through these exercises may not benefit you very much in the future,
+          the ability to think deeply about a problem, considering different
+          solutions, their tradeoffs, and the "shape" of the problem, are all
+          skills that are likely to generalize. For that reason alone I'll
+          continue to do a problem or two a day, especially considering it takes
+          up so little time, and counts as interview prep too.
+        </p>
+        <p>
+          Another relevant question here is; how valuable is it to learn more
+          math now? I've been working my way through Howard Anton and Anton
+          Kaul's
+          <a
+            href="https://www.google.com.au/books/edition/Elementary_Linear_Algebra/vjlPEAAAQBAJ?hl=en"
+            >Elementary Linear Algebra</a
+          >
+          textbook this year, building my linear algebra skills because of how
+          important they are to ML and mech interp specifically. Many of the
+          exercise questions in the textbook don't have answers in the back of
+          the book, and so I've defaulted to using ChatGPT to solve the
+          questions I've done, and comparing our answers. I also ask it where I
+          went wrong, how to express mathematically my informal reasoning, and
+          how to solve problems that I'm stuck on. It's clearly much better than
+          me at solving linear algebra textbook questions, and is able to
+          explain things to be in an interactive way that is more effective than
+          any math tutor I encountered at university. Apart from the fact that
+          LLMs solve the textbook questions much faster and more accurately (I
+          haven't seen a single error over the course of hundreds of questions),
+          the breadth of knowledge is much wider than mine; I'm only studying
+          linear algebra at a relatively early level, while the LLMs have read
+          all the textbooks for all branches of math, and understand concepts
+          that come much later than what I'm studying. A few months ago, both
+          <a
+            href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/?utm_source=chatgpt.com"
+            >Google</a
+          >
+          and
+          <a href="https://x.com/alexwei_/status/1946477742855532918">OpenAI</a>
+          had models achieve gold level performance in the international math
+          Olympiad, where each country sends their 6 top high-school students to
+          compete, and only 11.4% achieved gold. After skimming this years
+          questions, I feel it would take quite a while for me to solve them,
+          and I certainly would not be able to get gold in the allocated time.
+          So the LLMs solve textbook problems faster, more accurately, they know
+          and can apply many more concepts from many more branches of math, and
+          are more effective at IMO level questions, which are designed to be
+          novel and difficult, without requiring esoteric math knowledge. Unless
+          I become a mathematician, it seems these models will always be better
+          than me at doing math problems, especially considering the rate of
+          improvements in benchmark scores, with
+          <a href="https://klu.ai/glossary/GSM8K-eval">GSM8K</a> being saturated
+          in the space of a few years, and FrontierMath performance jumping from
+          <a href="https://arxiv.org/pdf/2411.04872">3%</a> to
+          <a
+            href="https://openai.com/index/openai-o3-mini/?utm_source=chatgpt.com"
+            >32%</a
+          >
+          in the space of 2 months.
+        </p>
+        <p>
+          But once again, there is value in learning math that goes deeper than
+          the ability to apply the skills in narrow environments; learning math
+          augments your thinking with new concepts that are extremely widely
+          applicable, almost by definition. While these concepts can be applied
+          and explained by LLMs, using LLMs to augment your thinking with these
+          concepts when you don't understand them yourself is an incredibly
+          inefficient approach. Thinking and solving problems with an LLM using
+          math you don't understand is like driving using a street directory
+          which only shows the roads within a 200m radius around you; you will
+          (with some time and effort) be able to understand how concepts locally
+          connect, and use this to make some progress, but the lack of vision of
+          the overall landscape will result in blindly wandering into dead ends.
+          Not to mention the impact on your speed if you have to type out a
+          prompt and wait for a response which you then have to parse, in
+          comparison to the instant recall you get with true understanding.
+          Therefore, if the LLM cannot do the whole task itself, you're better
+          off knowing the math yourself.
+        </p>
+        <p>
+          In the domain of textbook problems, and some real world pure math
+          tasks, LLMs really are able to solve the problem form start to finish,
+          but for problems that blend multiple topics and depend on tacit
+          knowledge and unique requirements, this is not the case, and this is
+          where the deeper impact of knowing the math yourself can be felt.
+        </p>
+        <p>
+          Fundamentally, deciding what skills to learn today is a forecasting
+          problem, and real world forecasting is an incredibly difficult
+          problem, so conservatism with respect to choice of skills to grow
+          looks to be a smart bet, at least for now. What this looks like in
+          practice is skills that are the most broadly applicable and rare.
+          General problem solving, Math, critical thinking/rationality, and
+          social skills appear to be the top candidates from my vantage point,
+          but I expect others to be added to that list over time.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
