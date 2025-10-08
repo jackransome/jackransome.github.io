@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Georgia, serif;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Navigation Bar */
+      nav {
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #5f9b65;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      nav a:hover {
+        color: #4a7a50;
+      }
+
+      /* Main Content */
+      .container {
+        max-width: 800px;
+        margin: 3rem auto 50vh;
+        padding: 3rem;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+        font-family: "Warnock Pro", "Palatino Linotype", "Book Antiqua",
+          Palatino, serif;
+      }
+
+      .subtitle {
+        font-size: 1.25rem;
+        color: #666;
+        font-style: italic;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #eee;
+        font-family: "Warnock Pro", "Palatino Linotype", "Book Antiqua",
+          Palatino, serif;
+      }
+
+      .content {
+        font-size: 1.125rem;
+        color: #333;
+      }
+
+      .content p {
+        margin-bottom: 1.5rem;
+      }
+
+      .content a {
+        color: #5f9b65;
+        text-decoration: none;
+        border-bottom: 1px solid #5f9b65;
+        transition: all 0.2s;
+      }
+
+      .content a:hover {
+        color: #4a7a50;
+        border-bottom-color: #4a7a50;
+      }
+
+      .content h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #000;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-family: "Warnock Pro", "Palatino Linotype", "Book Antiqua",
+          Palatino, serif;
+      }
+
+      .content img {
+        max-width: 100%;
+        height: auto;
+        margin: 2rem 0;
+        display: block;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .container {
+          margin: 1rem;
+          padding: 1.5rem;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <h1>Does RL give LLMs motivation?</h1>
+      <div class="subtitle">How GRPO style RL produces motivated models</div>
+
+      <div class="content">
+        <p>
+          One of the contested points when it comes to AI risk is whether or not
+          the current direction of LLMs will lead to models that have
+          motivations. In this post I will outline how the current paradigm of
+          reinforcement learning, which AI labs are
+          <a
+            href="https://openai.com/index/introducing-o3-and-o4-mini/?utm_source=chatgpt.com"
+            >currently in the process of scaling up dramatically</a
+          >, does in fact lead to motivations.
+        </p>
+
+        <h3>What is motivation?</h3>
+
+        <p>
+          Firstly, I define a goal as a criterion on the state of a system's
+          world model, and motivation as a tendency for the system to act upon
+          the world in a way that steers towards that goal being met. Rocks do
+          not have motivation, though they always seem to want to fall towards
+          the ground, because they have no world model, and no criterion. A maze
+          solving rat has motivation, since it models the maze, the fact that
+          solving the maze results in reward, and it has a criterion of solving
+          the maze which it steers towards.
+        </p>
+
+        <p>
+          For an LLM to have motivations and goals, under this definition, it
+          needs to have a model of it's situation, criteria on the state of this
+          situation, and must steer towards it.
+        </p>
+
+        <h3>What do base models learn?</h3>
+
+        <p>
+          The pretraining phase of LLMs trains the neural network to predict the
+          next token in the sequence, on a dataset that is made up primarily
+          from text on the internet. Predicting all of that text is quite a
+          difficult task, and can be done more effectively with a predictive
+          model that models what is "behind" the generation of the text, namely
+          human beings. As a result, gradient descent converges to models that
+          <a href="https://arxiv.org/abs/2505.14685"
+            >maintain an internal representation of the human being(s) that most
+            likely generated the text</a
+          >. Take this as an example of something that may have made it into the
+          pretraining corpus: "Bob puts the box of cereal on the shelf, but it
+          falls to the floor, bob then ". It's very difficult to complete the
+          sentence without inferring that bob actually wants the box of cereal
+          to be on the shelf, and so gradient descent is likely to converge on
+          an algorithm that infers Bob's motivation from the start of the
+          sentence, and then will use it to predict what comes after. This is a
+          simple example, but the concept extends to much of what is written
+          online; online discussions are hard to predict without modelling which
+          side each person is arguing for; Stack Overflow is hard to predict if
+          you don't know that the person replying is trying to help, etc.
+        </p>
+
+        <p>
+          All this is to say that because goals and motivations are a very
+          effective way to model the text on the internet, LLMs learn to model
+          those aspects of humans.
+        </p>
+
+        <h3>How does modern LLM RL work?</h3>
+
+        <p>
+          I'll be using GRPO here since that's what DeepSeek used to train their
+          <a href="https://arxiv.org/abs/2501.12948">r1 model</a>. GRPO most
+          likely is not used in the big closed-source labs today, partly because
+          it has some pretty big theoretically flaws, but whatever they are
+          currently using is extremely likely to be of the same form, such that
+          the conclusions of this post aren't undermined (for now).
+        </p>
+
+        <p>
+          The core of GRPO for LLMs is that the LLM is given a task, in the form
+          of a single prompt, then a collection of reasoning traces are "rolled
+          out", by having multiple different instances answer the same prompt,
+          then these "rollouts" are marked based on correctness of their answer
+          / completion of the task, and then the LLM is trained on these
+          rollouts, with the changes made to the weights being proportional to
+          how correct the answers were (there is more detail here, it's worth
+          reading
+          <a href="https://arxiv.org/abs/2501.12948">the DeepSeek-R1 paper</a>
+          if you're interested). This can be conceptualized roughly as having
+          the LLM answer in different ways, taking the outputs that gave the
+          most correct answers, and putting them in a new dataset(technically
+          all traces are in their, weighted by correctness), and then training
+          on this dataset in the same way that pretraining trains on the
+          internet.
+        </p>
+
+        <img src="img/diagram1.png" alt="GRPO rollout process diagram" />
+
+        <p>
+          This results in the LLM being trained to do next token prediction on
+          it's most successful past rollouts, in the same way it's trained to
+          predict human text in pretraining. And as with pretraining, the LLM is
+          incentivized to learn useful abstractions about text that let it more
+          accurately predict it. What are the abstractions it learns? To answer
+          this, we have to ask; What is common to the rollouts that gave correct
+          answers? There are some obvious object level answers, such as saying
+          Paris when asked for the capital of France, then slightly more
+          abstract traits such as writing syntactically valid code. But there
+          are also more complex traits that lead to success, such as tenacity;
+          the tendency to work around roadblocks relentlessly to achieve the
+          required end state. Text rollouts that look as if they are produced by
+          a system motivated to complete the task, are more likely to complete
+          the task correctly. Because this dataset of correct rollouts has these
+          traits, the LLM learns to model them internally, which in turn leads
+          to those modelled traits exhibiting influence on the outputs in
+          subsequent rollouts, bootstrapping into a process that imbues the LLM
+          with the traits that result in it achieving the greatest performance
+          on the tasks it's trained on.
+        </p>
+
+        <img src="img/diagram2.png" alt="Bootstrapping process diagram" />
+
+        <p>
+          It's easy to see then, why RL gives LLMs intrinsic motivation, through
+          this bootstrapping process of selecting what looks motivated,
+          modelling it, and then using the output of the LLM to generate further
+          rollouts, recursively.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
