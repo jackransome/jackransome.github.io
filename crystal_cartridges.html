@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crystal Cartridges</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Georgia, serif;
+        background-color: #000;
+        color: #fff;
+        line-height: 1.6;
+      }
+
+      /* Navigation Bar */
+      nav {
+        background-color: #000;
+        border-bottom: 1px solid #333;
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      nav a {
+        text-decoration: underline;
+        color: #fff;
+        font-weight: 500;
+      }
+
+      nav a:hover {
+        color: #fff;
+      }
+
+      /* Main Content */
+      .container {
+        max-width: 800px;
+        margin: 3rem auto 50vh;
+        padding: 3rem;
+        background-color: #1a1a1a;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+        font-family: "Warnock Pro", "Palatino Linotype", "Book Antiqua",
+          Palatino, serif;
+      }
+
+      .subtitle {
+        font-size: 1.25rem;
+        color: #aaa;
+        font-style: italic;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #333;
+        font-family: "Warnock Pro", "Palatino Linotype", "Book Antiqua",
+          Palatino, serif;
+      }
+
+      .content {
+        font-size: 1.125rem;
+        color: #fff;
+      }
+
+      .content p {
+        margin-bottom: 1.5rem;
+      }
+
+      .content a {
+        color: #fff;
+        text-decoration: underline;
+      }
+
+      .content a:hover {
+        color: #fff;
+      }
+
+      .content h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #fff;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-family: "Warnock Pro", "Palatino Linotype", "Book Antiqua",
+          Palatino, serif;
+      }
+
+      .content img {
+        max-width: 100%;
+        height: auto;
+        margin: 2rem 0;
+        display: block;
+      }
+
+      .image-container {
+        display: flex;
+        gap: 1rem;
+        margin: 2rem 0;
+        align-items: flex-start;
+      }
+
+      .image-container img {
+        height: 250px;
+        width: auto;
+        margin: 0;
+        object-fit: contain;
+        flex: 1;
+        max-width: 50%;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .container {
+          margin: 1rem;
+          padding: 1.5rem;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <h1>Crystal Cartridges</h1>
+      <div class="subtitle">A cyberpunk future of LLM exo brains</div>
+
+      <div class="content">
+        <img src="img/top_img_3.png" alt="Crystal Cartridges Header" />
+
+        <h3>A Forgotten Future</h3>
+
+        <p>
+          Cyberpunk novels like Neuromancer and Snow Crash sold us a future
+          where data was a highly valued, physical-like commodity, with data
+          vaults under ICE security, information heists, and expensive ice
+          breaker programs being sold like non-reproducible physical goods. As
+          the internet matured, however, the cost of distribution fell through
+          the floor, allowing the proliferation of piracy, websites like
+          Wikipedia, and ad-based business models to commoditized knowledge and
+          drive its value into the ground.
+        </p>
+
+        <h3>Two Kinds of Intelligence</h3>
+
+        <p>
+          Psychologists often break intelligence into two distinct categories:
+          fluid, and crystallized. Fluid intelligence is the ability to
+          recognize patterns, learn new concepts, and build new skills, while
+          crystallized intelligence is the set of facts, concepts, and skills
+          you already possess.
+        </p>
+
+        <p>
+          While they have a long way to go, LLMs have already demonstrated
+          impressive advances in fluid intelligence through in-context
+          learning(ICL). ICL is the ability to learn from patterns in the
+          context window and then apply this knowledge. One impressive example
+          of this is the performance of models like OpenAI's o3 on the
+          <a href="https://arcprize.org/leaderboard">ARC-AGI-1 benchmark</a>,
+          which is designed to test abstraction and novel pattern recognition.
+          Another example of ICL is LLM performance on
+          <a
+            href="https://aclanthology.org/2024.findings-acl.925.pdf?utm_source=chatgpt.com"
+            >translating unseen languages window</a
+          >, using only what is in the context. Interestingly, it has been shown
+          that part of what is happening in ICL is that the
+          <a href="https://arxiv.org/abs/2212.07677">
+            internal state of the network is emulating gradient descent</a
+          >.
+        </p>
+
+        <p>
+          Crystalized intelligence on the other hand, is an area where, at least
+          in terms of sheer volume of information retained and skills learned,
+          LLMs are truly superhuman at. They understand more natural languages
+          than almost any human. They have a vast store of facts about different
+          cultures, history, books, scientific literature, programming, math,
+          and so on, which they readily apply in the required contexts. However,
+          the LLM's built-in crystalized intelligence has one huge limitation;
+          it is not able to be modified after training. Of course,
+          theoretically, at the end of each day, you could take everything the
+          LLM processed that day and use fine-tuning to add it to it's long-term
+          memory overnight, but for firms serving hundreds of millions of
+          customers which would each need a separate branch of the model, this
+          is prohibitively expensive, and there just isn't enough compute in the
+          world to facilitate this on the scale of use that LLMs currently see.
+        </p>
+
+        <h3>Augmented Models</h3>
+
+        <p>
+          When LLMs first burst onto the scene as consumer products,
+          hallucinations were common and often seen as an almost impossible
+          problem to solve, as they supposedly
+          <a href="https://youtu.be/xnFmnU0Pp-8?si=oSwGkpxiL0CzeaI4&t=381">
+            stemmed from how the LLMs worked on a fundamental level</a
+          >. These days however, you rarely hear about hallucinations, and will
+          encounter them an order of magnitude less often in practice. So what
+          changed? The addition of reasoning and search. With reasoning, models
+          are now able to question their own output and notice mistakes and
+          inconsistencies. But if the underlying model truly believes in the
+          existence of some fictional paper, even reasoning cannot save it
+          alone. Enter: search. Search allows the models to search the internet
+          to check if their own claims are true, eliminating a huge amount of
+          hallucinations since now, the model can simply check. Even with
+          relatively small and natively hallucination-prone models, search can
+          dramatically cut down the number of hallucinations that actually make
+          it into the final output.
+        </p>
+
+        <p>
+          In the context of fluid vs crystalized, what does this mean? The
+          model's neural net weights may be static, but now the entire internet
+          has been plugged in as an auxiliary bank of crystallized-intelligence,
+          taking precedence over the model's internally stored facts and, most
+          importantly, it is regularly updated. No longer are knowledge cutoffs
+          for models a concern, when their crystalized intelligence is
+          constantly updated in real time by the rest of the world.
+        </p>
+
+        <h3>How Deep Can Crystallized Intelligence Go?</h3>
+
+        <p>
+          Access to up-to-date-news and public resources like Wikipedia is one
+          thing, but what about the hard skills-part of crystalized
+          intelligence? Can we encode the sort of experience that builds up in
+          white-collar workers over years? I'd wager that the answer is yes for
+          a fairly large percentage of the tacit knowledge that workers pick up
+          on the job. Procedures for finishing certain tasks, rules of thumb for
+          particular situations, heuristics for decisions in vague
+          circumstances, red flags, and much more of what we accumulate in our
+          work lives should be able to be encoded in text and therefore can be
+          plugged into LLMs like cartridges that instantly give them these
+          abilities. Many corporations already spend resources concretizing
+          procedures and useful knowledge that can help workers do their jobs,
+          but this is bottlenecked by just how much an employee is willing and
+          able to read. For LLMs, however, you can drop an entire
+          one-million-token manual into the context and instantly make use of
+          it.. Skills, learned procedures, worldviews, and memorized facts all
+          fall under the definition of crystalized intelligence and are all able
+          to be "slotted" into LLMs, given the right format. And because these
+          skills are required for a human or agent to be economically valuable,
+          there will be strong economic pressure to create these crystal
+          cartridges.
+        </p>
+
+        <div class="image-container">
+          <img src="img/skill_download.gif" alt="Crystal Cartridges Diagram" />
+          <img src="img/neoimg.png" alt="Crystal Cartridges Diagram" />
+        </div>
+
+        <p>
+          At this point, I don't think it's clear just how far this can go. Will
+          we get the equivalent of
+          <a href="https://williamgibson.fandom.com/wiki/Microsoft"
+            >Microsofts</a
+          >
+          For LLMs? Will you be able to connect an LLM to the right database to
+          pump up its performance in a particular domain far above what it can
+          do natively? We can imagine huge decision trees, million-page-long
+          manuals, terabytes of "experience" logged, all hierarchically
+          organized and efficiently indexed for rapid retrieval.
+        </p>
+
+        <h3>What Isn't Stored on the Internet?</h3>
+
+        <p>
+          The amount of information on the internet is already mind-boggling in
+          the sheer quantity and range of topics. Wikipedia alone currently has
+          64 million articles, covering almost any topic you can think of. But
+          many of the skills and much of the domain knowledge that humans are
+          paid to apply every day are not explicitly stored online. This tacit
+          knowledge involved in economically valuable work today, the "tricks of
+          the trade" so to speak, are not going to be found in Wikipedia.
+        </p>
+
+        <p>
+          This gap in knowledge that is specifically useful for economically
+          valuable work provides an opportunity to build up stores of this
+          information, deliberately encoding the skills, procedures, heuristics,
+          and domain knowledge that is required to succeed in a given domain.
+          Domain specialization between corporations building these data banks
+          could emerge, as depth wins over breadth when a resource as broad as
+          the internet is already available.
+        </p>
+
+        <h3>Structure</h3>
+
+        <p>
+          Another important issue with the internet is how it is structured, or
+          rather, how it isn't. When LLMs today are using a search tool to
+          retrieve relevant content for whatever task they are performing,
+          you'll notice that they hit a lot of dead ends: they make a search
+          query, they visit one of the sites that were returned, they read, they
+          decide the required info isn't there, rinse and repeat. This wastes a
+          lot of tokens, slows down the process dramatically, and sometimes the
+          required information, despite being online, isn't found by the LLM.
+          The economic pressures pushing to get as many ads in front of human
+          eyes as possible are working against LLM performance here, and there
+          just isn't much incentive to organize the internet in the optimal way
+          for an agent.
+        </p>
+
+        <p>
+          This again opens up an opportunity to craft alternatives and structure
+          information in the optimal way for an LLM. Hierarchical organization,
+          comprehensive categorization and tagging systems, and not having to
+          wait for Google to get back to you or for a particular website to load
+          are all benefits of having a local, purpose-built data bank for your
+          agents.
+        </p>
+
+        <p>
+          The combination of gains from domain-specific crystalized intelligence
+          and proper organization and storage of said intelligence together
+          should create a big enough incentive to produce these cartridges that
+          I expect us to see them being produced and monetized in the next five
+          years.
+        </p>
+
+        <h3>Security</h3>
+
+        <p>
+          If these data stores give your agents enough of an edge to make them
+          significantly more economically valuable, there will be an incentive
+          to steal them. They are just data, after all, easily copied, pasted,
+          and distributed by anyone with access. This, in turn, creates an
+          incentive to closely guard them and upgrade corporate cybersecurity to
+          prevent attackers from stealing your hard-earned, or costly,
+          intelligence.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
